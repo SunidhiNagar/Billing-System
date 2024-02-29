@@ -1,0 +1,19 @@
+
+
+
+.container{
+    background-color:white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+th,td{
+    text-align: center;
+}
+
+#totalAmount{
+    font-size: 18px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css"/>
+    <title>Billing System</title>
+</head>
+<body>
+  <!------------------------------------------
+     Text Centering (text-center): This class centers text horizontally inside an element.
+     w.r.t webpage
+
+    Container (container): This class creates a centered box for content, keeping it in the middle of the webpage.
+    w.r.t element
+
+    Margin Top (mt-5): This class adds space at the top of an element, creating distance from elements above it.  w.r.t webpage
+    ------------------------------------------->
+    <div class="container mt-5" style="border: solid red;" >
+        <h2 class="text-center" style="border: solid blue;">Billing Invoice</h2>
+
+        <!-------------
+            <div>- This starts a division or section within the webpage.
+
+            class="formgroup col-md-6": This assigns CSS classes to the division.
+
+            formgroup: Typically used to group form-related elements together for styling or functionality.
+
+            col-md-6: Part of a grid system like Bootstrap, it makes the division occupy half of the available width on medium-sized screens, facilitating responsive design.
+            col-md-6 specifically indicates that the <div> should occupy 6 out of 12 columns (or half the width) of its parent container on medium-sized screens (md denotes medium). This ensures that the content is displayed in two columns when the viewport width reaches a certain threshold.
+
+                ---------------->
+
+        <form id="invoiceform">
+            <div class="row mt-5 mb-5">
+                <div class="formgroup col-md-6">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="Enter Customer" required/>
+               </div>
+
+            
+                <div class="formgroup col-md-6">
+                    <label for="invoiceDate">Invoice Date</label>
+                    <input type="text" class="form-control" id="invoiceDate" placeholder="Enter Customer" disabled readonly/>
+                </div>
+            </div>
+
+            <!------------Table-------->
+         <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <!--scope="col": This attribute specifies the scope of the header cell, indicating that it applies to a column.-->
+
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+            
+                <th scope="col" >Discount</th>
+
+                 <th scope="col" >Total</th>
+                <th scope="col">Action</th>
+                </tr>    
+
+            </thead>
+            <tbody id ="invoiceItems">
+                    <!--Items will be added dynamically -->
+            </tbody>
+        </table>
+                <!------------Table-------->
+
+                 <!------------Button-------->
+            <button type="button" class="btn btn-primary" onclick="addInvoiceItem()">Add Items
+             </button>
+
+            
+             
+             <div class="formgroup col-md-6 mt-4">
+                <label for="totalAmount">Total Amount</label>
+                <input type="text" class="form-control" id="totalAmount" disabled readonly/>
+             </div>
+
+             
+             
+
+             
+             
+                <button type="submit" class="btn btn-success mt-4">Generate Invoice</button>
+            
+
+        </form>
+        <button type="button" class="btn btn-danger btn-print mt-4" onclick="printInvoice()">Print
+        </button>
+
+    </div>
+   
+   <!---------------------Scripts------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="invoice.js"></script>
+</body>
+</html>
